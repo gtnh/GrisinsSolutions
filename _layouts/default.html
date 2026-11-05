@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:title" content="{{ page.title | default: site.title | escape }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/images/pjotrs-grisins.jpg' | absolute_url }}">
+  <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Grišins Solutions home"><span class="brand-mark" aria-hidden="true">GS</span><span class="brand-copy"><span>GRIŠINS <span class="brand-light">SOLUTIONS</span></span><span class="brand-tagline">Independent technical consultancy in Zurich, Switzerland</span></span></a>
+    <nav aria-label="Main navigation">
+      <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a>
+      <a href="{{ '/blog/' | relative_url }}" {% if page.url contains '/blog/' %}aria-current="page"{% endif %}>Blog</a>
+      <a href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
+      <a class="nav-contact" href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Let’s talk <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main">{{ content }}</main>
+  <footer class="site-footer wrap">
+    <div><a class="footer-name" href="{{ '/' | relative_url }}">Grišins Solutions</a><p>AI expertise. Practical outcomes.</p></div>
+    <div><p>Greater Zurich area, Switzerland</p><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
+    <div><a href="{{ site.linkedin }}">LinkedIn <span aria-hidden="true">↗</span></a><p>© {{ site.time | date: '%Y' }} Pjotrs Grišins</p></div>
+  </footer>
+</body>
+</html>

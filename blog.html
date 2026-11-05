@@ -1,0 +1,16 @@
+---
+title: Blog
+description: Notes on applied AI, machine learning, computer vision and technical delivery by Dr. Pjotrs Grišins.
+permalink: /blog/
+---
+<!--section class="wrap page-intro"><p class="eyebrow">The blog</p><h1>Notes from<br><em>the work.</em></h1><p class="lead">Ideas and lessons on applied AI, computer vision and bringing technology into practice.</p></section-->
+<section class="wrap page-intro"><p class="eyebrow">The blog</p><h1>Safe space<br><em>for ideas.</em></h1></section>
+<section class="wrap blog-list" aria-label="Blog posts">
+{% for post in site.posts %}
+  {% capture continue_link %} <a class="continue-reading" href="{{ post.url | relative_url }}">Continue reading <span aria-hidden="true">↗</span></a>{% endcapture %}
+  {% assign excerpt_end = continue_link | append: '</p>' %}
+  <article class="post-preview"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %-d, %Y' }}</time><h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>{% if post.description %}<p class="post-subtitle">{{ post.description | escape }}</p>{% endif %}<div class="post-excerpt prose">{% if post.excerpt contains '</p>' %}{{ post.excerpt | replace_first: '</p>', excerpt_end }}{% else %}{{ post.excerpt }}{{ continue_link }}{% endif %}</div></article>
+{% else %}
+  <div class="empty-state"><span class="status-dot" aria-hidden="true"></span><p>No articles yet. Check back for new posts.</p></div>
+{% endfor %}
+</section>

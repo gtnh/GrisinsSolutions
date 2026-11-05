@@ -1,0 +1,8 @@
+---
+layout: default
+---
+<article class="wrap post">
+  <header class="page-intro"><a class="text-link" href="{{ '/blog/' | relative_url }}">← All articles</a><p class="eyebrow"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time> · {{ site.name }}</p><h1>{{ page.title | escape }}</h1>{% if page.description %}<p class="lead">{{ page.description | escape }}</p>{% endif %}</header>
+  <div class="prose post-content">{{ content }}</div>
+</article>
+{% include contact-cta.html %}

@@ -1,0 +1,34 @@
+title: Grišins Solutions
+name: Dr. Pjotrs Grišins
+description: Practical AI, machine learning and computer vision solutions for business, from first experiment to production.
+url: https://gtnh.github.io
+baseurl: /GrisinsSolutions
+email: pjotrs@grisins-solutions.ch
+linkedin: https://www.linkedin.com/in/pjotrs-grisins/
+timezone: Europe/Zurich
+lang: en
+permalink: /blog/:year/:month/:day/:title/
+markdown: kramdown
+strict_front_matter: true
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - docs
+  - README.md
+  - goal.md
+  - roles.md
+  - cv.md
+  - AI_Engineer.md
+  - photo.png
+  - AGENTS.md
